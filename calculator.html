@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+
+        .Form{
+            height: 500px;
+            width: 40%;
+            background-color: teal;
+            margin-left: 30%;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        .heading{
+            text-align: center;
+            background-color: skyblue;
+        }
+        .InputBox{
+            height: 35px;
+            width: 60%;
+            margin-left: 20%;
+            margin-top: 10%;
+        }
+        .btnBox{
+            margin-left: 25%;
+            margin-top: 20px;
+        }
+        button{
+            background-color: black;
+            color: white;
+            height: 20px;
+        }
+
+        .btnBox{
+            height: 30px;
+            width: 60%;
+            margin-left: 15%;
+            padding-left: 15%;
+            padding-top: 10px;
+            background-color: skyblue;
+        }
+        .result{
+            margin-top: 10px;
+            background-color: slateblue;
+
+        }
+        button:hover{
+            background-color: white;
+            color: black;
+            border-radius: 20px;
+            box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        }
+        .btnBox:hover{
+            background-color: black;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+        .topBar{
+            height: 70px;
+            width: 100%;
+            color: white;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="topBar">
+    <h1 id="head" style="text-align:center;"></h1>
+  
+    </div>
+    <div class="Form">
+        <h1 class="heading">CALCULATOR </h1>
+        <input id="firstinput" type="text" class="InputBox" placeholder="Enter a number">
+        <br>
+        <br>
+        <input id="secondinput" type="text" class="InputBox" placeholder="Enter a number">
+        <br>
+        <br><div class="btnBox">
+            <button onclick="add()">Addition</button>
+            <button onclick="divi()">division</button>
+            <button onclick="mul()">multiplication</button>
+            <div style="display:flex">
+                <h1 style="margin-left:10px">Result is: <h1 id="ans"></h1></h1>
+                
+            </div>
+            <div class="thankyou">
+              <h1 id="thanking"></h1>
+            </div>
+        </div>
+ </div>
+
+        <script>
+            function add(){
+            console.log("function working")
+            let valueOne=document.getElementById("firstinput").value;
+            console.log(valueOne)
+            let valueTwo=document.getElementById("secondinput").value;
+            console.log(valueTwo)
+            let sum=parseInt(valueOne) + parseInt(valueTwo)
+            console.log(sum)
+            document.getElementById("ans").innerHTML=sum;
+            setTimeout(thankyou, 2000);
+            }
+            function divi(){
+            console.log("function working")
+            let valueOne=document.getElementById("firstinput").value;
+            console.log(valueOne)
+            let valueTwo=document.getElementById("secondinput").value;
+            console.log(valueTwo)
+            let sum=parseInt(valueOne) / parseInt(valueTwo)
+            document.getElementById("ans").innerHTML=sum;
+            
+            }
+            function mul(){
+            console.log("function working")
+            let valueOne=document.getElementById("firstinput").value;
+            console.log(valueOne)
+            let valueTwo=document.getElementById("secondinput").value;
+            console.log(valueTwo)
+            let sum=parseInt(valueOne) * parseInt(valueTwo)
+            document.getElementById("ans").innerHTML=sum;
+            
+            }
+            function thankyou(){
+                document.getElementById("thanking").innerHTML="thankyou for using our calculator";
+                
+            }
+           
+            setInterval(function() {
+      console.log("hi")
+      document.getElementById("head").innerHTML="";
+                document.getElementById("head").innerHTML="virtual calculator";
+}, 2000);
+    
+    </script>
+</body>
+</html>
